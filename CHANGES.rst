@@ -38,6 +38,10 @@ Bug Fixes:
 
 - Require AccessControl 4.0b1 so ``guarded_getitem`` is used.
   Part of PloneHotfix20171128.  [maurits]
+- Register the ``ExceptionView`` for the unspecific ``zope.interface.Interface``, to plone.rest
+adapters for requests providing a interface like ``plone.rest.interfaces.IAPIRequest``. This one isn't  a browser layer, and without this fix the ExceptionView would be registered for the base IBrowserLayer.
+Before, there was a exception handling skin script, which could be overloaded by plone.rest.
+  [thet]
 
 - Improved isURLInPortal according to PloneHotfix20171128.
   Accept only http/https, and doubly check escaped urls.  [maurits]
